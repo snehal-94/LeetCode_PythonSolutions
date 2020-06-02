@@ -38,3 +38,4 @@ class Solution:
                 count+=1
         if count==len(ransomNote):
             return True
+  
