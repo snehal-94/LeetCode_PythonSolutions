@@ -38,7 +38,17 @@ Constraints:
 s consists of lowercase English letters.
 1 <= k <= s.length
 
-Solution________________________________________
+Solution 1_______________________________________
+class Solution:
+    def maxVowels(self, s: str, k: int) -> int:
+        mx=vow=sum(1 for i in s[:k] if i in 'aeiou')
+        for i,v in enumerate(s[k:]):
+            vow+=(v in 'aeiou')-(s[i] in 'aeiou')
+            mx=max(vow,mx)
+        return mx
+        
+
+Solution 2________________________________________
 
 from collections import Counter
 class Solution:
