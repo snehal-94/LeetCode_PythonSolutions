@@ -26,7 +26,7 @@ class Solution:
                 return True
             x+=1
         return False
-        
+  __________________________________________________________________________      
         #2nd Solution
         if n<=0:return False
         while n>=1:
@@ -34,12 +34,12 @@ class Solution:
             elif n%2==0: n=n/2
             else: return False
         return True
-        
+  ________________________________________________________________________      
         # 3rd Solution
         #int has range of -2**31 to 2**31.Hence n should be completely divisible by 2**31
         if n is a multiple of 2
         return n>0 and 2**31%n==0
-    
+    _____________________________________________________________________
         #4th Solution
         #Bit manipulation
         if n<=0: return False
