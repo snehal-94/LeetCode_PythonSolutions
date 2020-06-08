@@ -42,5 +42,8 @@ class Solution:
     _____________________________________________________________________
         #4th Solution
         #Bit manipulation
+        #All no.s divisible by 2 will have only one 1 in their binary representation.
+        #Hence the rightmost 1 in the binary version would be the only one 1 present.
+        #if we flip it, it becomes 0.
         if n<=0: return False
         return n&(n-1)==0
