@@ -38,7 +38,7 @@ class Solution:
         while t!=h: t,h=nums[t],nums[h]
         return t
    ________________________________________________________________________
-
+    #Applicable only on arrays having positive numbers
     #take the abs values for each index and treat them as index 
         #and change the value for that index to negative. If we find the value is already negative that 
         #means it was visited before
