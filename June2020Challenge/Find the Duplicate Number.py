@@ -37,3 +37,12 @@ class Solution:
         t=0
         while t!=h: t,h=nums[t],nums[h]
         return t
+   ________________________________________________________________________
+
+    #take the abs values for each index and treat them as index 
+        #and change the value for that index to negative. If we find the value is already negative that 
+        #means it was visited before
+        for i in range(len(nums)):
+            val=nums[i]
+            if nums[abs(val)]<0: return abs(val)
+            else: nums[abs(val)]=-nums[abs(val)]
