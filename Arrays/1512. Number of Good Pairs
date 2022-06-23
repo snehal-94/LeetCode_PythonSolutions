@@ -39,3 +39,22 @@ class Solution:
                     else:
                         elementFreq[nums[i]]+=1
         return sum(elementFreq.values())
+        
+     #       Counter
+        # freq=Counter(nums)
+        # res=0
+        # for i in freq.values():
+        #     res+=sum(range(i))
+        # return res
+#       Hashmap
+#         Explanation: When in [1,2,3,1,1,3] first 1 comes, no pair is present. When 2nd 1 comes, 1 pair is created which is basically value of the hashmap.
+#        When 3rd 1 comes, value hashmap is already 2 because of the last 2 1's. So, 2 pairs possible hence total is 1+2 for the 1's. Same for rest. O(n) complexity.
+        count=0
+        hashMap={}
+        for num in nums:
+            if num not in hashMap:
+                hashMap[num]=1
+            else:
+                count+=hashMap[num]
+                hashMap[num]+=1
+        return count
