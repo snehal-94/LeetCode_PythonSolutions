@@ -58,3 +58,6 @@ class Solution:
                 count+=hashMap[num]
                 hashMap[num]+=1
         return count
+                
+#        One liner
+        return sum(n*(n-1)//2 for n in Counter(nums).values())
