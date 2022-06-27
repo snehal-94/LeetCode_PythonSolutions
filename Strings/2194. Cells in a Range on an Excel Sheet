@@ -35,14 +35,17 @@ s.length == 5
 s consists of uppercase English letters, digits and ':'.
 
 __________________________________________________________________________________________
-
 class Solution:
     def cellsInRange(self, s: str) -> List[str]:
 #         Brute force O(n^2)
-        res=[]
-        for char in range(ord(s[0]),ord(s[3])+1):
-            for num in range(int(s[1]),int(s[4])+1):
-                res.append(chr(char)+str(num))
-        return res
+        # res=[]
+        # for char in range(ord(s[0]),ord(s[3])+1):
+        #     for num in range(int(s[1]),int(s[4])+1):
+        #         res.append(chr(char)+str(num))
+        # return res
+    
+#     One-liner using list comprehension
+        return [ chr(char)+str(num) for char in range(ord(s[0]),ord(s[3])+1) for num in range(int(s[1]),int(s[4])+1) ]
                 
+            
             
