@@ -30,17 +30,24 @@ ________________________________________________________________________________
 
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        mapS_t={}
-        mapT_s={}
-#       Use zip to create tuples from 2 iterators
-        for i,j in zip(s,t):
-#         If no mapping exists in either of dictionaries
-            if (i not in mapS_t) and (j not in mapT_s):
-                mapS_t[i]=j
-                mapT_s[j]=i
+#         Time Complexity: O(N). We process each character in both the strings exactly once to determine if the strings are isomorphic.
+# Space Complexity: O(1) since the size of the ASCII character set is fixed and the keys in our dictionary are all valid ASCII characters according to the problem statement.
+
+#         mapS_t={}
+#         mapT_s={}
+# #       Use zip to create tuples from 2 iterators
+#         for i,j in zip(s,t):
+# #         If no mapping exists in either of dictionaries
+#             if (i not in mapS_t) and (j not in mapT_s):
+#                 mapS_t[i]=j
+#                 mapT_s[j]=i
             
-#             If mapping doesn't exist in the dictionaries/ mapping exists but doesn't match
-#               in either dictionaries or both
-            elif mapS_t.get(i) != j or mapT_s.get(j) != i:
-                return False
-        return True
+# #             If mapping doesn't exist in the dictionaries/ mapping exists but doesn't match
+# #               in either dictionaries or both
+#             elif mapS_t.get(i) != j or mapT_s.get(j) != i:
+#                 return False
+#         return True
+
+#     One Liner
+        return len(set(s))==len(set(t))==len(set(zip(s,t)))
+
