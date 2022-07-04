@@ -49,5 +49,22 @@ class Solution:
 #         return True
 
 #     One Liner
-        return len(set(s))==len(set(t))==len(set(zip(s,t)))
+        # return len(set(s))==len(set(t))==len(set(zip(s,t)))
+        
+#        We use a method called first occurence transformation. i.e we replace characters in a string with the index of it's first occurence. Like PAPER becomes 01034 and title becomes 01034.Hence, both are isomorphic. Instead of putting values in string we will use a list because in longer strings there could be issue with indexes that are>9 i.e 10, 11, etc
+#         Complexity O(N)
+        dict_s={}
+        dict_t={}
+        list_s=[]
+        list_t=[]
+        for i,letter in enumerate(s):
+            if letter not in dict_s:
+                dict_s[letter]=i
+            list_s.append(dict_s[letter])
+        for i,letter in enumerate(t):
+            if letter not in dict_t:
+                dict_t[letter]=i
+            list_t.append(dict_t[letter])
+        return list_t==list_s
+
 
