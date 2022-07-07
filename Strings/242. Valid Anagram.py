@@ -38,8 +38,17 @@ class Solution:
                 dict1.pop(t[i])
         return not dict1
         
-        Another approach
-        # if sorted(s)==sorted(t):
-        #     return True
-        # return False
+#         Another approach one liner
+        if sorted(s)==sorted(t):
+            return True
+        return False
         
+#         Another approach using Counter
+        sDict= Counter(s)
+        for i in t:
+            if i not in sDict:
+                return False
+            sDict[i]-=1
+            if sDict[i]==0:
+                sDict.pop(i)
+        return not sDict
