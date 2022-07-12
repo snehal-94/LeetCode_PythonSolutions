@@ -38,3 +38,14 @@ class Solution:
             else:
                 result[sortedWord].append(word)
         return list(result.values())
+       
+      
+#     Without using sorted Time: O(mn) and Space: O(n)
+        result= defaultdict(list)
+        
+        for word in strs:
+            asciiArray=[0] * 26
+            for ch in word:
+                asciiArray[ord(ch) - ord("a")]+=1
+            result[tuple(asciiArray)].append(word)
+        return list(result.values())
