@@ -38,3 +38,9 @@ Follow up: Your algorithm's time complexity must be better than O(n log n), wher
                 res.append(a)
                 k-=1
         return res
+       
+    _________________________________________________________________________________________________________
+    
+    #         Using most_common() function 
+        count=Counter(nums).most_common()
+        return [count[i][0] for i in range(k)]
